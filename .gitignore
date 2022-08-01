@@ -15,3 +15,9 @@ src/activerecord/db_credentials.py
 
 # Exclude the node_modules folder.
 node_modules/*
+
+# Exclude the py27env folder.
+py27env/*
+
+# Exclude the .vscode/settings.json file.
+.vscode/settings.json
