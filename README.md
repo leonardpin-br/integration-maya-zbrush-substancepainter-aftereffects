@@ -1,15 +1,13 @@
 # Python project to facilitate integration among Maya, ZBrush, Substance Painter and After Effects.
 
-This project aims to turn it easy to export and import files between applications.
+This project aims to turn it easy to export and import files between
+applications, and render the scenes easily in V-Ray.
 
 ## Inspirations and reference
 This kit is heavily influenced by the greate course
 [PHP: Object-Oriented Programming with Databases](https://www.linkedin.com/learning/php-object-oriented-programming-with-databases)
 taught by Kevin Skoglund. If you are learning about OOP, I highly recommend it
 even if PHP is not your primary focus.
-
-## Why is it better than a script in a single file?
-This starter kit allows the development of a more powerfull tool. Instead of creating a single script, the user of this kit will be able to create a small application.
 
 ## It includes
     1. Easy password hashing and verification (bcrypt). Even though Autodesk Maya is not able to load
