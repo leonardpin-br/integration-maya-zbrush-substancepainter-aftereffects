@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ONLY FOR DEBUG:
+echo -e "Included utils.sh"
+
 # Gets the project root directory.
 # return (string) The root directory.
 get_root_directory() {

@@ -24,7 +24,7 @@ include "utils.sh"
 
 # Updates the absolute paths in the theme .qss file.
 # param1 (string): The theme file. Defaults to ./resources/qss/Combinear.qss.
-updateQssTheme() {
+update_QSS_theme() {
 
     # Clear the terminal window.
     clear
@@ -44,6 +44,8 @@ updateQssTheme() {
 
     # Removes the prefix if necessary.
     ROOT_DIR=$(remove_prefix $ROOT_DIR)
+    echo -e "$ROOT_DIR"
+    exit 0
 
     # Establishes the paths to the project folders.
     local RESOURCES_DIR="$ROOT_DIR/resources"
@@ -81,4 +83,4 @@ updateQssTheme() {
 
 }
 
-updateQssTheme $1
+update_QSS_theme $1
