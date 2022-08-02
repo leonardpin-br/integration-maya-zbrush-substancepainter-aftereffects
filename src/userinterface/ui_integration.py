@@ -106,7 +106,7 @@ References:
 
 """
 
-__all__ = ['ScriptName']
+__all__ = ['Integration']
 __copyright__ = u"Copyright (C) 2022 Leonardo Pinheiro"
 __author__ = u"Leonardo Pinheiro <info@leonardopinheiro.net>"
 __link__ = u"https://www.leonardopinheiro.net"
@@ -131,10 +131,10 @@ UI_FILE, STYLESHEET_FILE, QSS_DIR = ui_functions.build_ui_qss_filenames(
 THEME_FILE = os.path.join(QSS_DIR, "Combinear.qss")
 
 
-class ScriptName(MayaQWidgetBaseMixin, QtWidgets.QMainWindow):
+class Integration(MayaQWidgetBaseMixin, QtWidgets.QMainWindow):
 
     def __init__(self, *args, **kwargs):
-        super(ScriptName, self).__init__(*args, **kwargs)
+        super(Integration, self).__init__(*args, **kwargs)
 
         # Loads the window.
         self.widget = QUiLoader().load(UI_FILE)

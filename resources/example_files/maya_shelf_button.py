@@ -9,7 +9,7 @@ import sys
 
 module_path = 'E:\\cloud\\Backup\\Libraries\\scripts\\maya\\python-maya-boilerplate\\src'
 
-# Se o caminho não faz parte do path:
+# If the module_path is not already in sys.path:
 for path in sys.path:
     if path == module_path:
         break
