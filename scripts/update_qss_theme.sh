@@ -14,8 +14,12 @@
 # https://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash
 
 include() {
-    # MY_DIR corresponde ao diretório do arquivo principal.
-    MY_DIR=$(dirname $(readlink -f $0))
+    # ONLY FOR DEBUG:
+    MY_DIR="/home/web/Documents/GitHub/integration-maya-zbrush-substancepainter-aftereffects/scripts"
+
+    # # MY_DIR corresponde ao diretório do arquivo principal.
+    # MY_DIR=$(dirname $(readlink -f $0))
+
     . $MY_DIR/$1
 }
 
@@ -44,8 +48,6 @@ update_QSS_theme() {
 
     # Removes the prefix if necessary.
     ROOT_DIR=$(remove_prefix $ROOT_DIR)
-    echo -e "$ROOT_DIR"
-    exit 0
 
     # Establishes the paths to the project folders.
     local RESOURCES_DIR="$ROOT_DIR/resources"

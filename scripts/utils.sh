@@ -7,8 +7,12 @@ echo -e "Included utils.sh"
 # return (string) The root directory.
 get_root_directory() {
 
-    # The directory of this script.
-    readonly SCRIPTS_DIR=$(dirname $(readlink -f $0))
+    # ONLY FOR DEBUG
+    readonly SCRIPTS_DIR="/home/web/Documents/GitHub/integration-maya-zbrush-substancepainter-aftereffects/scripts"
+
+    # # The directory of this script.
+    # readonly SCRIPTS_DIR=$(dirname $(readlink -f $0))
+
     local ROOT_DIR=$(dirname $SCRIPTS_DIR)
 
     # The return value.
@@ -78,6 +82,8 @@ remove_unix_prefix() {
 # Removes the environment (MINGW, Cygwin...) from the string path.
 # param1 (string): The root directory path.
 remove_prefix() {
+
+    local root_dir="$1"
 
     # Discovers the environment this script is running on:
     # see   https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
