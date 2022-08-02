@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# ONLY FOR DEBUG:
-echo -e "Included utils.sh"
+# # ONLY FOR DEBUG:
+# echo -e "Included utils.sh"
 
 # Gets the project root directory.
 # return (string) The root directory.
 get_root_directory() {
 
-    # ONLY FOR DEBUG
-    readonly SCRIPTS_DIR="/home/web/Documents/GitHub/integration-maya-zbrush-substancepainter-aftereffects/scripts"
+    # # ONLY FOR DEBUG
+    # readonly SCRIPTS_DIR="/home/web/Documents/GitHub/integration-maya-zbrush-substancepainter-aftereffects/scripts"
 
-    # # The directory of this script.
-    # readonly SCRIPTS_DIR=$(dirname $(readlink -f $0))
+    # The directory of this script.
+    readonly SCRIPTS_DIR=$(dirname $(readlink -f $0))
 
     local ROOT_DIR=$(dirname $SCRIPTS_DIR)
 
