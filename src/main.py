@@ -142,7 +142,11 @@ def main():
         pass
 
     myWin = ui_integration.Integration()
-    myWin.show()
+    myWin.show(dockable=True)
+
+    # TODO
+    # Close window if it is already open.
+    # https://stackoverflow.com/questions/42281843/closing-qdialog-if-exists-in-pyside
 
     return "hello"
 
