@@ -121,8 +121,18 @@ References:
 import os
 import sys
 
+# from maya import OpenMayaUI as omui
+# from PySide2.QtWidgets import *
+# from shiboken2 import wrapInstance
+
 import shared
 import userinterface.ui_integration as ui_integration
+
+
+# def maya_main_window():
+#     mayaMainWindowPtr = omui.MQtUtil.mainWindow()
+#     mayaMainWindow = wrapInstance(long(mayaMainWindowPtr), QWidget)
+#     return mayaMainWindow
 
 
 def main():
@@ -141,12 +151,14 @@ def main():
     except:
         pass
 
+    # myWin = ui_integration.Integration(parent=maya_main_window())
     myWin = ui_integration.Integration()
     myWin.show(dockable=True)
 
     # TODO
     # Close window if it is already open.
     # https://stackoverflow.com/questions/42281843/closing-qdialog-if-exists-in-pyside
+    # https://help.autodesk.com/view/MAYAUL/2017/CHS/?guid=__files_GUID_66ADA1FF_3E0F_469C_84C7_74CEB36D42EC_htm
 
     return "hello"
 
