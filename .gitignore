@@ -21,3 +21,6 @@ py27env/*
 
 # Exclude the .vscode/settings.json file.
 .vscode/settings.json
+
+# Exclude all zscript files.
+*.zsc

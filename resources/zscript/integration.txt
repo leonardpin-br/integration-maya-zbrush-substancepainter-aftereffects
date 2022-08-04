@@ -1,0 +1,40 @@
+/*
+Personalizes ZBrush to facilitate the integration with Maya and Substance Painter.
+
+Last modified 2022-08-04
+
+Copyright:  2022 Leonardo Pinheiro
+Author:     Leonardo Pinheiro <info@leonardopinheiro.net>
+Link:       https://www.leonardopinheiro.net
+
+REFERENCES:
+    ZBrush - ZScript Fundamentals
+    https://www.youtube.com/playlist?list=PLuvCsqbtUSFBDPXvB3SScoMD1VapO9Z0v
+*/
+
+// Creation of the subpalette:
+[ISubPalette, "Zplugin:Leonardo Pinheiro", 0, , 0, 0, 0, 0]
+
+// Creation of the presentation button:
+[IButton,
+    "Zplugin:Leonardo Pinheiro:Integration",
+    "0xffd86fIntegration 0xffffffscript created by Leonardo Pinheiro.",
+    ,
+    0,
+    190,
+    ,
+    "icons/integration.psd",
+    48
+]
+
+// Creation of the button:
+[IButton,
+    "Zplugin:Leonardo Pinheiro:Hello World",
+    "0xffd86fButton Title\nExplanation of what this button does.",
+    [Note, "Hello World!",, 1],
+    0,
+    0,
+    ,
+    ,
+    0
+]
