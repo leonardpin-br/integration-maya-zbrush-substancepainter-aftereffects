@@ -95,6 +95,10 @@ References:
 
     `Creating the package files`_
 
+    `closing qDialog (if exists) in pySide`_
+
+    `PyQt and PySide Widget Best Practices`_
+
 .. _sphinx-apidoc ignoring some modules/packages:
    https://chadrick-kwag.net/sphinx-apidoc-ignoring-some-modules-packages/
 .. _Coverage.py:
@@ -115,24 +119,62 @@ References:
    https://youtrack.jetbrains.com/issue/PY-40010
 .. _Creating the package files:
    https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-the-package-files
+.. _closing qDialog (if exists) in pySide:
+   https://stackoverflow.com/a/42600180
+.. _PyQt and PySide Widget Best Practices:
+   https://help.autodesk.com/view/MAYAUL/2017/CHS/?guid=__files_GUID_66ADA1FF_3E0F_469C_84C7_74CEB36D42EC_htm
 
 """
 
 import os
 import sys
 
-# from maya import OpenMayaUI as omui
-# from PySide2.QtWidgets import *
-# from shiboken2 import wrapInstance
+from maya import OpenMayaUI as omui
+
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+from PySide2 import __version__
+from shiboken2 import wrapInstance
 
 import shared
 import userinterface.ui_integration as ui_integration
 
 
-# def maya_main_window():
-#     mayaMainWindowPtr = omui.MQtUtil.mainWindow()
-#     mayaMainWindow = wrapInstance(long(mayaMainWindowPtr), QWidget)
-#     return mayaMainWindow
+def maya_main_window():
+    u"""Parents this app widget under an existing Maya widget, that is, Maya's main window.
+
+    If the widget is un-parented, it may be destroyed by the Python interpreter's garbage collector if a reference to it is not maintained.
+
+    Returns:
+        QWidget: The Maya main window.
+
+    References:
+        `Maintain a Reference to your Widget`_
+
+        `Shiboken module`_
+
+        `QWidget Class`_
+
+        `QMainWindow Class`_
+
+        `MQtUtil Class Reference`_
+
+    .. _Maintain a Reference to your Widget:
+       https://help.autodesk.com/cloudhelp/2018/ENU/Maya-SDK/files-to-wrap/GUID-66ADA1FF-3E0F-469C-84C7-74CEB36D42EC.htm
+    .. _Shiboken module:
+       https://doc.qt.io/qtforpython/shiboken6/shibokenmodule.html#shiboken-module
+    .. _QWidget Class:
+       https://doc.qt.io/qt-6/qwidget.html
+    .. _QMainWindow Class:
+       https://doc.qt.io/qt-6/qmainwindow.html
+    .. _MQtUtil Class Reference:
+       https://download.autodesk.com/us/maya/2011help/API/class_m_qt_util.html#76e5d7e2e06d5d8d6236d0ae6cad7754
+    """
+
+    mayaMainWindowPtr = omui.MQtUtil.mainWindow()
+    mayaMainWindow = wrapInstance(long(mayaMainWindowPtr), QWidget)
+    return mayaMainWindow
 
 
 def main():
@@ -151,14 +193,8 @@ def main():
     except:
         pass
 
-    # myWin = ui_integration.Integration(parent=maya_main_window())
-    myWin = ui_integration.Integration()
+    myWin = ui_integration.Integration(parent=maya_main_window())
     myWin.show(dockable=True)
-
-    # TODO
-    # Close window if it is already open.
-    # https://stackoverflow.com/questions/42281843/closing-qdialog-if-exists-in-pyside
-    # https://help.autodesk.com/view/MAYAUL/2017/CHS/?guid=__files_GUID_66ADA1FF_3E0F_469C_84C7_74CEB36D42EC_htm
 
     return "hello"
 
