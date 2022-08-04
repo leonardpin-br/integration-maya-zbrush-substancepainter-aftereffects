@@ -149,11 +149,32 @@ class Integration(MayaQWidgetDockableMixin, QtWidgets.QMainWindow):
         self.setWindowTitle(self.widget.windowTitle())
 
         # Connects the event (clicked) to the method.
-        self.widget.pushButton_3.clicked.connect(self.escreveNome)
+        self.widget.listWidget.itemClicked.connect(self.Clicked)
 
-    def get_text_from_textbox(self):
-        return self.widget.lineEdit.text()
+    def set_uvs_active(self):
+        self.widget.stackedWidget.setCurrentWidget(self.widget.uvs)
 
-    def escreveNome(self):
-        text = self.get_text_from_textbox()
-        self.widget.label.setText("Welcome, " + text + ".")
+    def set_zbrush_active(self):
+        self.widget.stackedWidget.setCurrentWidget(self.widget.zbrush)
+
+    def set_substance_painter_active(self):
+        self.widget.stackedWidget.setCurrentWidget(self.widget.substance_painter)
+
+    def set_after_effects_active(self):
+        self.widget.stackedWidget.setCurrentWidget(self.widget.after_effects)
+
+    def Clicked(self,item):
+
+        result = item.text()
+
+        if result == "UVs":
+            self.set_uvs_active()
+
+        elif result == "ZBrush":
+            self.set_zbrush_active()
+
+        elif result == "Substance Painter":
+            self.set_substance_painter_active()
+
+        elif result == "After Effects":
+            self.set_after_effects_active()
