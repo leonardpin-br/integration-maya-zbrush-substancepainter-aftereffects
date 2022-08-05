@@ -10,6 +10,10 @@ Link:       https://www.leonardopinheiro.net
 REFERENCES:
     ZBrush - ZScript Fundamentals
     https://www.youtube.com/playlist?list=PLuvCsqbtUSFBDPXvB3SScoMD1VapO9Z0v
+    Como funciona a escala no Zbrush l ZBrush Tutorial #033
+    https://www.youtube.com/watch?v=mUcucjRsRSc
+    Exportação, ajustando a escala e a posição | ZBrush Tutorial #049
+    https://www.youtube.com/watch?v=n5Ad3JARAuY
 */
 
 // Creation of the subpalette:
