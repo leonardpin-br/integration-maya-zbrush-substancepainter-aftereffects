@@ -14,6 +14,8 @@ REFERENCES:
     https://www.youtube.com/watch?v=mUcucjRsRSc
     Exportação, ajustando a escala e a posição | ZBrush Tutorial #049
     https://www.youtube.com/watch?v=n5Ad3JARAuY
+    Rendering ZBrush Displacement with V-Ray
+    https://docs.chaos.com/display/VMAYA/Rendering+ZBrush+Displacement+with+V-Ray
 */
 
 // Creation of the subpalette:
